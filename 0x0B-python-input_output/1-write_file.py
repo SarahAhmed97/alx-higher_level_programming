@@ -1,8 +1,17 @@
 #!/usr/bin/python3
-"""Provides a function to count the lines in a file"""
+"""
+Module for write_file method.
+"""
 
 
-def number_of_lines(filename=""):
-    """Count the number of lines in a file"""
-    with open(filename, 'r') as istream:
-        return len(istream.readlines())
+def write_file(filename="", text=""):
+    """write_file writes a string to a text file.
+    Args:
+        filename (str): name of file.
+        text (str): text to be written.
+
+    Return: number of bytes written.
+
+    """
+    with open(filename, mode="w", encoding="UTF-8") as f:
+        return (f.write(text))

@@ -1,17 +1,17 @@
 #!/usr/bin/python3
-"""Provides a function to print a poriton of a file"""
+"""
+Module for append_write method.
+"""
 
 
-def read_lines(filename="", nb_lines=0):
-    """Print the specified number of lines of a file"""
-    with open(filename, 'r') as istream:
-        if nb_lines < 1:
-            print(istream.read(), end="")
-        else:
-            while nb_lines > 0:
-                line = istream.readline()
-                if line:
-                    print(line, end="")
-                    nb_lines -= 1
-                else:
-                    break
+def append_write(filename="", text=""):
+    """append_write appends string at the end of a text file.
+
+    Args:
+        filename (str): name of file.
+            text (str): text to be appended to the file.
+        Returns: number of characters written.
+
+    """
+    with open(filename, "a", encoding='utf-8') as a_file:
+        return a_file.write(text)

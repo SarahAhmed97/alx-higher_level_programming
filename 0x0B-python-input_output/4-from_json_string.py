@@ -1,8 +1,14 @@
 #!/usr/bin/python3
-"""Provides a function to append text to a file"""
+"""
+Module for from_json_string method.
+"""
 
 
-def append_write(filename="", text=""):
-    """Append text to a file"""
-    with open(filename, 'a') as ostream:
-        return ostream.write(text)
+import json
+
+
+def from_json_string(my_str):
+    """
+    returns an object represented by a JSON string.
+    """
+    return (json.loads(my_str))

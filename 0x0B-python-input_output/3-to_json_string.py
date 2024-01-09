@@ -1,8 +1,14 @@
 #!/usr/bin/python3
-"""Provides a function to write text to a file"""
+"""
+Module for to_json_to-string method.
+"""
 
 
-def write_file(filename="", text=""):
-    """Write text to a file"""
-    with open(filename, 'w') as ostream:
-        return ostream.write(text)
+import json
+
+
+def to_json_string(my_obj):
+    """
+    Returns JSON representation of an object.
+    """
+    return (json.dumps(my_obj))
